@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
@@ -23,5 +24,10 @@ public class MainMenuScript : MonoBehaviour
     {
         levelSelectCanvas.SetActive(true);
         gameObject.SetActive(false);
+    }
+
+    public void StartButtonPressed()
+    {
+        SceneManager.LoadScene("LevelOne");
     }
 }
