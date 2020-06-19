@@ -1215,5 +1215,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7054057085567543855, guid: d6d6487e2ea55054a975795b3da49f20,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054057085567543855, guid: d6d6487e2ea55054a975795b3da49f20,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054057085567543855, guid: d6d6487e2ea55054a975795b3da49f20,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2.5599997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7054057085567543855, guid: d6d6487e2ea55054a975795b3da49f20,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6d6487e2ea55054a975795b3da49f20, type: 3}
