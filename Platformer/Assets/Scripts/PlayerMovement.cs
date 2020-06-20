@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CharacterController2D controller;
     [SerializeField] private float runSpeed = 40f;
     [SerializeField] private Text winText;
+    [SerializeField] private Vector3 startingPos;
 
     private float horizontalMove = 0f;
     private bool jump = false;
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         winText.enabled = false;
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -43,17 +45,23 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
-
     }
 
     void OnTriggerEnter2D(Collider2D trigger)
-    {
+    { 
+        //checks if at goal
         if (trigger.gameObject.tag == "Goal")
         {
             horizontalMove = 0;
             controller.Move(0, false, false);
             winText.enabled = true;
             this.enabled = false;
+        }
+
+        //check if respawn
+        if (trigger.gameObject.tag == "Boundary")
+        {
+            this.transform.position = startingPos;
         }
     }
 }

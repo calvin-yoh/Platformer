@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 10358496449235590}
   m_Layer: 0
   m_Name: MapBounds
-  m_TagString: Respawn
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
