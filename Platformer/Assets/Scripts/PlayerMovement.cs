@@ -2,36 +2,58 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 //わたしのともだちはばかです。
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    float speed = 5.0f;
+    [SerializeField] private CharacterController2D controller;
+    [SerializeField] private float runSpeed = 40f;
+    [SerializeField] private Text winText;
 
-    public Vector2 jump;
+    private float horizontalMove = 0f;
+    private bool jump = false;
+    private bool crouch = false;
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-
+        winText.enabled = false;
     }
-
     // Update is called once per frame
     void Update()
     {
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0);
-        transform.position += move * speed * Time.deltaTime;
-
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.UpArrow))  //makes player jump
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        if (Input.GetButtonDown("Jump"))
         {
-            GetComponent<Rigidbody2D>().AddForce(jump, ForceMode2D.Impulse);
+            jump = true;
+        }
+
+        if (Input.GetButtonDown("Crouch"))
+        {
+            crouch = true;
+        }
+        else if (Input.GetButtonUp("Crouch"))
+        {
+            crouch = false;
         }
     }
 
-    public void SetSpeed(float newSpeed)
+    private void FixedUpdate()
     {
-        speed = newSpeed;
+        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        jump = false;
+
+    }
+
+    void OnTriggerEnter2D(Collider2D trigger)
+    {
+        if (trigger.gameObject.tag == "Goal")
+        {
+            horizontalMove = 0;
+            controller.Move(0, false, false);
+            winText.enabled = true;
+            this.enabled = false;
+        }
     }
 }
