@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 public class PlayerInteraction : MonoBehaviour
 {
 
     [SerializeField] private CharacterController2D controller;
     [SerializeField] private PlayerMovement movement;
     [SerializeField] private Text winText;
+    [SerializeField] private Text scoreText;
     [SerializeField] private Vector3 startingPos;
 
     private void Awake()
@@ -31,9 +33,11 @@ public class PlayerInteraction : MonoBehaviour
             this.transform.position = startingPos;
         }
 
+        //check if coin
         if (trigger.gameObject.tag == "Coin")
         {
             trigger.gameObject.SetActive(false);
+            scoreText.text = (Convert.ToInt32(scoreText.text) + 100).ToString();
             Debug.Log("Score Increased");
         }
     }

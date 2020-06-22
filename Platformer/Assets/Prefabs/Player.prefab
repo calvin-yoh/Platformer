@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4068535746081601960}
   - component: {fileID: 4068535746081601956}
   - component: {fileID: 4068535746081601957}
-  - component: {fileID: 5499713607397843458}
   - component: {fileID: 4068535746081601959}
   - component: {fileID: 4068535746081601962}
   - component: {fileID: 3941588556206423391}
+  - component: {fileID: 113166367}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -137,22 +137,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &5499713607397843458
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4068535746081601961}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 6fa29698ccb6b49449b48167c11f60f3, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.00024554133, y: -0.0026092113}
-  serializedVersion: 2
-  m_Radius: 0.06268596
 --- !u!114 &4068535746081601959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +195,24 @@ MonoBehaviour:
   controller: {fileID: 4068535746081601959}
   movement: {fileID: 4068535746081601962}
   winText: {fileID: 0}
+  scoreText: {fileID: 0}
   startingPos: {x: 0, y: 0, z: 0}
+--- !u!70 &113166367
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4068535746081601961}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 6fa29698ccb6b49449b48167c11f60f3, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0014795092, y: -0.020623758}
+  m_Size: {x: 0.13000022, y: 0.08788776}
+  m_Direction: 1
 --- !u!1 &5102043417020871467
 GameObject:
   m_ObjectHideFlags: 0
