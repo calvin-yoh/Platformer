@@ -10,7 +10,12 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private PlayerMovement movement;
     [SerializeField] private Text winText;
     [SerializeField] private Text scoreText;
+    [SerializeField] private Text livesText;
     [SerializeField] private Vector3 startingPos;
+    [SerializeField] private float currLives = 3;
+    
+    private LayerMask detectEnemy;
+    
 
     private void Awake()
     {
@@ -19,26 +24,35 @@ public class PlayerInteraction : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D trigger)
     {
-        //checks if at goal
-        if (trigger.gameObject.tag == "Goal")
+        if (trigger.gameObject.tag == "Goal") //checks if at goal
         {
             movement.enabled = false;
             controller.Move(0, false, false);
             winText.enabled = true;
         }
-
-        //check if respawn
-        if (trigger.gameObject.tag == "Boundary")
+        else if (trigger.gameObject.tag == "Boundary") // check if respawn
         {
-            this.transform.position = startingPos;
+            PlayerDie();
         }
-
-        //check if coin
-        if (trigger.gameObject.tag == "Coin")
+        else if (trigger.gameObject.tag == "Coin") //check if coin
         {
-            trigger.gameObject.SetActive(false);
             scoreText.text = (Convert.ToInt32(scoreText.text) + 100).ToString();
-            Debug.Log("Score Increased");
         }
+        else if (trigger.gameObject.tag == "Enemy")
+        {
+            scoreText.text = (Convert.ToInt32(scoreText.text) + 100).ToString();
+        }
+    }
+
+    public void PlayerDie()
+    {
+        this.transform.position = startingPos;
+        currLives -= 1;
+        livesText.text = "Lives : " + currLives.ToString();
+    }
+
+    public void AddLife()
+    {
+        currLives += 1;
     }
 }
