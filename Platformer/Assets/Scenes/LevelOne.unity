@@ -154,11 +154,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4068535746081601962, guid: 1bd8f7171cd40f14e8fb00916fd1ddb0,
-        type: 3}
-      propertyPath: winText
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4068535746081601963, guid: 1bd8f7171cd40f14e8fb00916fd1ddb0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2957,6 +2952,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1180272633285539296, guid: 539c10ba67e7c3a479d70d2eac60cc2a,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 800
+      objectReference: {fileID: 0}
     - target: {fileID: 1180272633285539298, guid: 539c10ba67e7c3a479d70d2eac60cc2a,
         type: 3}
       propertyPath: m_Name
