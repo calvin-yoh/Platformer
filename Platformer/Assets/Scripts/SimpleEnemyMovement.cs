@@ -5,6 +5,7 @@ using UnityEngine;
 public class SimpleEnemyMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
+    [SerializeField] private float moveDirection;
     [SerializeField] private LayerMask detectWhat;
     [SerializeField] private Transform sightTop;
     [SerializeField] private Transform sightBot;
@@ -14,7 +15,8 @@ public class SimpleEnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.localScale = new Vector2(transform.localScale.x * moveDirection, transform.localScale.y);
+        moveSpeed *= moveDirection;
     }
 
     // Update is called once per frame
@@ -33,13 +35,13 @@ public class SimpleEnemyMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         float height = col.contacts[0].point.y - weakness.position.y;
-
+        
         if (col.gameObject.tag == "Player")  
         {
             if (height > 0)
             {
                 col.rigidbody.AddForce(new Vector2(0, 2000));
-                Die();
+                SimpleEnemyDie();
             }
             else 
             {
@@ -48,7 +50,7 @@ public class SimpleEnemyMovement : MonoBehaviour
         }
     }
 
-    void Die()
+    void SimpleEnemyDie()
     {
         Destroy(gameObject);
     }

@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
+  moveDirection: 1
   detectWhat:
     serializedVersion: 2
     m_Bits: 1847
