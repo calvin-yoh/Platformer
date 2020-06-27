@@ -9,7 +9,6 @@ public class BreakableBlockScript : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         float heightBot = col.contacts[0].point.y - botWeakness.position.y;
-
         if (col.gameObject.tag == "Player")
         {
             if (heightBot < 0)

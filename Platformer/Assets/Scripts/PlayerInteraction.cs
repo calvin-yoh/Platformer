@@ -8,6 +8,7 @@ public class PlayerInteraction : MonoBehaviour
 
     [SerializeField] private CharacterController2D controller;
     [SerializeField] private PlayerMovement movement;
+    [SerializeField] private Animator anim;
     [SerializeField] private Text winText;
     [SerializeField] private Text scoreText;
     [SerializeField] private Text livesText;
@@ -29,6 +30,7 @@ public class PlayerInteraction : MonoBehaviour
             movement.enabled = false;
             controller.Move(0, false, false);
             winText.enabled = true;
+            anim.SetFloat("speed", 0);
         }
         else if (trigger.gameObject.tag == "Boundary") // check if respawn
         {

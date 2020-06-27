@@ -93,7 +93,7 @@ Transform:
   m_GameObject: {fileID: 4068535746081601961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.04357, y: 2.04357, z: 2.04357}
+  m_LocalScale: {x: 1.8033831, y: 1.8033831, z: 1.8033831}
   m_Children:
   - {fileID: 6454604120343035646}
   - {fileID: 2678439452678081517}
@@ -280,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 4068535746081601959}
   movement: {fileID: 4068535746081601962}
+  anim: {fileID: 947611635}
   winText: {fileID: 0}
   scoreText: {fileID: 0}
   livesText: {fileID: 0}
@@ -457,7 +458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6630650833362018938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.83, z: 0}
+  m_LocalPosition: {x: -0.06, y: 0.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4068535746081601963}
