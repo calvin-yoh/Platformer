@@ -165,7 +165,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0830268, y: 0.2600433}
+  m_Offset: {x: -0.09100647, y: 0.26004326}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -176,7 +176,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5685707, y: 1.0445337}
+  m_Size: {x: 0.52707636, y: 1.0445337}
   m_EdgeRadius: 0
 --- !u!50 &4068535746081601957
 Rigidbody2D:
@@ -221,7 +221,6 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 4160353371283003374}
   m_CeilingCheck: {fileID: 2678439452678081517}
   m_CrouchDisableCollider: {fileID: 4068535746081601956}
-  playerCamera: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -298,8 +297,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.074419074, y: -0.28951585}
-  m_Size: {x: 0.584711, y: 1.126397}
+  m_Offset: {x: -0.08459113, y: -0.28951588}
+  m_Size: {x: 0.56436694, y: 1.126397}
   m_Direction: 0
 --- !u!95 &947611635
 Animator:
