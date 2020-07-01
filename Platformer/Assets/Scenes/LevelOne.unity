@@ -1172,7 +1172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457375149}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.724827, y: -1.7832012, z: 210.33128}
+  m_LocalPosition: {x: -0.5195794, y: 0.66166043, z: 210.33128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1230833476}
@@ -3473,7 +3473,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -3488,7 +3488,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -39.654724, y: 15.218444}
+    - - {x: -39.570023, y: 15.218444}
+      - {x: 144.3613, y: 15.216489}
+      - {x: 144.27734, y: -15.131739}
       - {x: -39.6788, y: -15.161826}
 --- !u!1001 &1577515353
 PrefabInstance:
@@ -24561,7 +24563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ConfineMode: 0
   m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 0}
+  m_BoundingShape2D: {fileID: 1528378765}
   m_ConfineScreenEdges: 1
   m_Damping: 0
 --- !u!4 &2040409842 stripped
