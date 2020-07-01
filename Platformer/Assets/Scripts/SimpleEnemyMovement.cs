@@ -10,6 +10,7 @@ public class SimpleEnemyMovement : MonoBehaviour
     [SerializeField] private Transform sightTop;
     [SerializeField] private Transform sightBot;
     [SerializeField] private Transform weakness;
+    [SerializeField] private Animator anim;
     private bool colliding;
 
     // Start is called before the first frame update
@@ -52,6 +53,7 @@ public class SimpleEnemyMovement : MonoBehaviour
 
     void SimpleEnemyDie()
     {
-        Destroy(gameObject);
+        anim.SetBool("dead", true);
+        Destroy(gameObject, 0.5f);
     }
 }
