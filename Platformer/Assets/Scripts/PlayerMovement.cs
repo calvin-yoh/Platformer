@@ -51,4 +51,9 @@ public class PlayerMovement : MonoBehaviour
     {
         anim.SetBool("isCrouching", isCrouching);
     }
+
+    int score = 0;
+    string myName = "Me";
+    bool canMove = true;
+    char letterGrade = 'A';
 }
