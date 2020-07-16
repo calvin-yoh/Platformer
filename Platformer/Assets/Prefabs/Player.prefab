@@ -1,65 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &111029324
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 111029325}
-  m_Layer: 8
-  m_Name: RightBottomCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &111029325
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 111029324}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.062, y: -0.0736, z: 0}
-  m_LocalScale: {x: 1, y: 0.234375, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4068535746081601963}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1898204610
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1898204611}
-  m_Layer: 8
-  m_Name: LeftBottomCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1898204611
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898204610}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: -0.0736, z: 0}
-  m_LocalScale: {x: 1, y: 0.234375, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4068535746081601963}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4068535746081601961
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,8 +37,6 @@ Transform:
   m_Children:
   - {fileID: 2678439452678081517}
   - {fileID: 4160353371283003374}
-  - {fileID: 1898204611}
-  - {fileID: 111029325}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -221,7 +159,6 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 4160353371283003374}
   m_CeilingCheck: {fileID: 2678439452678081517}
   m_CrouchDisableCollider: {fileID: 4068535746081601956}
-  jumpTime: 0.35
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -283,7 +220,7 @@ MonoBehaviour:
   winText: {fileID: 0}
   scoreText: {fileID: 0}
   livesText: {fileID: 0}
-  startingPos: {x: 0, y: 0, z: 0}
+  startingPos: {x: -12, y: 2, z: 0}
   currLives: 3
 --- !u!70 &496182015
 CapsuleCollider2D:
@@ -298,8 +235,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08459113, y: -0.28951588}
-  m_Size: {x: 0.56436694, y: 1.126397}
+  m_Offset: {x: -0.10228192, y: -0.28951588}
+  m_Size: {x: 0.5997485, y: 1.126397}
   m_Direction: 0
 --- !u!95 &947611635
 Animator:

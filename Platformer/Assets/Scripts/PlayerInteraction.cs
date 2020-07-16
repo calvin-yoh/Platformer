@@ -23,7 +23,7 @@ public class PlayerInteraction : MonoBehaviour
         winText.enabled = false;
     }
 
-    void OnTriggerEnter2D(Collider2D trigger)
+    void OnCollisionEnter2D(Collision2D trigger)
     {
         if (trigger.gameObject.tag == "Goal") //checks if at goal
         {
@@ -42,7 +42,8 @@ public class PlayerInteraction : MonoBehaviour
         }
         else if (trigger.gameObject.tag == "Enemy")
         {
-            scoreText.text = (Convert.ToInt32(scoreText.text) + 100).ToString();
+            PlayerDie();
+            //scoreText.text = (Convert.ToInt32(scoreText.text) + 100).ToString();
         }
     }
 

@@ -19,10 +19,6 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
-	private float jumpTimeCounter;
-	private bool isJumping = false;
-	[SerializeField] private float jumpTime;
-
 	[Header("Events")]
 	[Space]
 
@@ -131,7 +127,9 @@ public class CharacterController2D : MonoBehaviour
 		if (m_Grounded && jump)
 		{
 			// Add a vertical force to the player.
+			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			Debug.Log(jump);
 		}
 	}
 
@@ -147,7 +145,3 @@ public class CharacterController2D : MonoBehaviour
 		transform.localScale = theScale;
 	}
 }
-/* Block comment
- * keep commenting
- * sdxgkjdxkgbvnj*/
- sdfkysdfkjf

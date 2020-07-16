@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("speed", Mathf.Abs(horizontalMove));
         if (Input.GetButtonDown("Jump"))
         {
+            Debug.Log("gotButton");
             jump = true;
             anim.SetBool("isJumping", true);
         }
@@ -51,9 +52,4 @@ public class PlayerMovement : MonoBehaviour
     {
         anim.SetBool("isCrouching", isCrouching);
     }
-
-    int score = 0;
-    string myName = "Me";
-    bool canMove = true;
-    char letterGrade = 'A';
 }
