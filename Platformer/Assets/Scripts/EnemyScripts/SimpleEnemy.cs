@@ -6,12 +6,12 @@ public class SimpleEnemy : EnemyMovement
 {
     [SerializeField] private float health = 50f;
 
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float moveDirection;
-    [SerializeField] private LayerMask detectWhat;
-    [SerializeField] private Transform sightTop;
-    [SerializeField] private Transform sightBot;
-    [SerializeField] private Animator anim;
+    [SerializeField] private float moveSpeed = 0;
+    [SerializeField] private float moveDirection = 0;
+    [SerializeField] private LayerMask detectWhat = 0;
+    [SerializeField] private Transform sightTop = null;
+    [SerializeField] private Transform sightBot = null;
+    [SerializeField] private Animator anim = null;
 
     void Start()
     {
