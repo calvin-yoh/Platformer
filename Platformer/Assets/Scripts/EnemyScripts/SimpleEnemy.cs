@@ -56,4 +56,9 @@ public class SimpleEnemy : EnemyMovement
             moveSpeed *= -1;
         }
     }
+
+    protected override void EnemyAttack()
+    {
+        return;
+    }
 }
