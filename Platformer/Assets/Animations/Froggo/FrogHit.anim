@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerJumpDown
+  m_Name: FrogHit
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 21d1cf6e210c36c488f529d9dc170803, type: 3}
+      value: {fileID: 21300000, guid: 5b7130ed75837a44cb64abc0cd729b49, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 79f4fbc4600bdd34bb7774c3dbeb9347, type: 3}
+      value: {fileID: 21300000, guid: 5b7130ed75837a44cb64abc0cd729b49, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,8 +42,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 21d1cf6e210c36c488f529d9dc170803, type: 3}
-    - {fileID: 21300000, guid: 79f4fbc4600bdd34bb7774c3dbeb9347, type: 3}
+    - {fileID: 21300000, guid: 5b7130ed75837a44cb64abc0cd729b49, type: 3}
+    - {fileID: 21300000, guid: 5b7130ed75837a44cb64abc0cd729b49, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

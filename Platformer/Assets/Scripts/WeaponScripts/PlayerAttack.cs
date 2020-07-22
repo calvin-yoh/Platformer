@@ -30,6 +30,7 @@ public class PlayerAttack : MonoBehaviour
                     rb.AddForce(force);
                 }
                 timeBtwAttack = startTimeBtwAttack;
+                Debug.Log("PlayerAttack");
             }
         }
         else 

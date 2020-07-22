@@ -22,9 +22,9 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("speed", Mathf.Abs(horizontalMove));
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("gotButton");
             jump = true;
             anim.SetBool("isJumping", true);
+            Debug.Log("gotButton");
         }
 
         if (Input.GetButtonDown("Crouch"))
