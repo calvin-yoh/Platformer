@@ -2695,6 +2695,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a0460f5f392e3144a15da09208eb02f, type: 3}
+--- !u!95 &1139841209 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 947611635, guid: 1bd8f7171cd40f14e8fb00916fd1ddb0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1618313570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1150810628 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2568080444423703499, guid: 7a0460f5f392e3144a15da09208eb02f,
@@ -3641,6 +3647,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 810759252, guid: 1bd8f7171cd40f14e8fb00916fd1ddb0, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1139841209}
     - target: {fileID: 3941588556206423391, guid: 1bd8f7171cd40f14e8fb00916fd1ddb0,
         type: 3}
       propertyPath: winText
@@ -3715,6 +3725,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4160353371283003374, guid: 1bd8f7171cd40f14e8fb00916fd1ddb0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.77
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bd8f7171cd40f14e8fb00916fd1ddb0, type: 3}

@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     private float timeBtwAttack;
     [SerializeField] private float startTimeBtwAttack = 0f;
     [SerializeField] private float forceMultiplier = 0f;
+    [SerializeField] private Animator anim = null;
 
     public Transform attackPosA;
     public Transform attackPosB;
@@ -35,6 +36,7 @@ public class PlayerAttack : MonoBehaviour
         }
         else 
         {
+            anim.SetBool("isAttacking", true);
             timeBtwAttack -= Time.deltaTime;
         }
     }
