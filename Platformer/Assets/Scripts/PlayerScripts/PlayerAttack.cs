@@ -15,28 +15,28 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask whatIsEnemy;
     public float attackRange;
 
-    // Update is called once per frame
-    void Update()
+    public void CheckAttack(float damage)
     {
         if (timeBtwAttack <= 0)
         {
             if (Input.GetKey(KeyCode.Space))
             {
                 Collider2D[] enemiesToDamage = Physics2D.OverlapAreaAll(attackPosA.position, attackPosB.position, whatIsEnemy);
-                foreach(Collider2D col in enemiesToDamage)
+                foreach (Collider2D col in enemiesToDamage)
                 {
-                    col.GetComponent<EnemyMovement>().TakeDamage(10f);
+                    col.GetComponent<EnemyMovement>().TakeDamage(damage);
                     Vector2 force = (col.transform.position - originOfExplode.position) * forceMultiplier;
                     Rigidbody2D rb = col.transform.GetComponent<Rigidbody2D>();
                     rb.AddForce(force);
                 }
+                anim.SetBool("isAttacking", true);
                 timeBtwAttack = startTimeBtwAttack;
                 Debug.Log("PlayerAttack");
             }
         }
-        else 
+        else
         {
-            anim.SetBool("isAttacking", true);
+            anim.SetBool("isAttacking", false);
             timeBtwAttack -= Time.deltaTime;
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class FroggoEnemy : EnemyMovement
 {
     [SerializeField] private float health = 50f;
+    [SerializeField] private float damageToDeal = 10f;
 
     [SerializeField] private float moveSpeed = 0;
     [SerializeField] private float moveDirection = 0;
@@ -66,7 +67,7 @@ public class FroggoEnemy : EnemyMovement
         Collider2D col = Physics2D.OverlapCircle(attackOrigin.position, attackRange, lookForPlayer);
         if (col != null)
         {
-            col.GetComponent<PlayerInteraction>().PlayerDie();
+            col.GetComponent<PlayerManager>().TakeDamage(damageToDeal);
             Vector2 force = (col.transform.position - originOfExplode.position) * forceMultiplier;
             Rigidbody2D rb = col.transform.GetComponent<Rigidbody2D>();
             rb.AddForce(force); 

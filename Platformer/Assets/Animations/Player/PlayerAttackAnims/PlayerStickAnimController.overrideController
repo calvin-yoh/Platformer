@@ -9,13 +9,5 @@ AnimatorOverrideController:
   m_Name: PlayerStickAnimController
   m_Controller: {fileID: 9100000, guid: c7d51528c1190d342abf2e71cc8507f1, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: d603483197b87044389a489827aa0527, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: d603483197b87044389a489827aa0527, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 1ffec22a2755cda46b52221a772e427c, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 1ffec22a2755cda46b52221a772e427c, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 0aecfbd6ba06f114ba14b2ca606c455b, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 0aecfbd6ba06f114ba14b2ca606c455b, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 6986fe76fb3b3c544a99cf5082c35bd5, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 6986fe76fb3b3c544a99cf5082c35bd5, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 848f2927f654a92488b9601201d755f0, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 5baa1423a6e35dd4f928a1ec844b6664, type: 2}

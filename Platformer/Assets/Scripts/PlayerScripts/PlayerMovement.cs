@@ -8,8 +8,10 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController2D controller = null;
-    [SerializeField] private float runSpeed = 40f;
+
     [SerializeField] private Animator anim = null;
+
+    [SerializeField] private float runSpeed = 40f;
 
     private float horizontalMove = 0f;
     private bool jump = false;
