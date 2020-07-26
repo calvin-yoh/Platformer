@@ -4,26 +4,28 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    private Vector2 target;
-
     private void Start()
     {
-        target.x = transform.position.x;
-        target.y = transform.position.y + transform.localScale.y;
+        IgnoreCollision();
     }
 
     public abstract string GetWeaponName();
 
     public abstract float GetDamage();
 
-    public abstract float GetAttackRange();
-
-    protected void MoveToPosition()
-    {
-        transform.position = Vector2.Lerp(transform.position, target, Time.fixedDeltaTime);
-    }
-
     public abstract AnimationClip GetAttackAnimClip();
 
-    public abstract Weapon GetWeaponType();   
+    public abstract Weapon GetWeaponType();
+
+    public abstract float GetWeaponRangeX();
+
+    public abstract float GetWeaponRangeY();
+
+    private void IgnoreCollision()
+    {
+        //Physics2D.IgnoreLayerCollision(14, 8, true);
+        Physics2D.IgnoreLayerCollision(14, 11, true);
+        Physics2D.IgnoreLayerCollision(14, 12, true);
+        Physics2D.IgnoreLayerCollision(14, 13, true);
+    }
 }

@@ -42,7 +42,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (currWeapon)
         {
-            playerAttack.CheckAttack(currWeapon.GetDamage());           
+            playerAttack.CheckAttack(currWeapon.GetDamage(), currWeapon.GetWeaponRangeX(), currWeapon.GetWeaponRangeY());           
         }
     }
 

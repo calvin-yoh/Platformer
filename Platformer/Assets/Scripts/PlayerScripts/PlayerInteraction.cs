@@ -25,6 +25,12 @@ public class PlayerInteraction : MonoBehaviour
         {
             manager.TakeDamage(10f);
         }
+        else if (collider.gameObject.tag == "Weapon")
+        {
+            manager.SetWeapon(collider.gameObject.GetComponent<Weapon>());
+            manager.OverrideAnimationController();
+            collider.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D trigger)
@@ -36,12 +42,6 @@ public class PlayerInteraction : MonoBehaviour
         else if (trigger.gameObject.tag == "Coin") //check if coin
         {
             manager.UpdateScore(100);
-        }
-        else if (trigger.gameObject.tag == "Weapon")
-        {           
-            manager.SetWeapon(trigger.GetComponent<Weapon>());
-            manager.OverrideAnimationController();
-            trigger.gameObject.SetActive(false);
-        }
+        }   
     }
 }

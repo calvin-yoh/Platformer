@@ -43,6 +43,11 @@ public class FroggoEnemy : EnemyMovement
         CheckState();
     }
 
+    private void FixedUpdate()
+    {
+        anim.SetBool("isHit", false);
+    }
+
     public override void TakeDamage(float damageTaken)
     {
         anim.SetBool("isHit", true);
@@ -131,7 +136,6 @@ public class FroggoEnemy : EnemyMovement
                 anim.SetBool("isWalking", true);
                 anim.SetBool("isAttacking", false);
                 anim.SetBool("isDead", false);
-                anim.SetBool("isHit", false);
                 ResumeMovement();
                 EnemyWalk();
                 break;
@@ -139,7 +143,6 @@ public class FroggoEnemy : EnemyMovement
                 anim.SetBool("isWalking", false);
                 anim.SetBool("isAttacking", true);
                 anim.SetBool("isDead", false);
-                anim.SetBool("isHit", false);
                 StopMovement();
                 EnemyAttack();
                 break;
@@ -147,14 +150,12 @@ public class FroggoEnemy : EnemyMovement
                 anim.SetBool("isWalking", false);
                 anim.SetBool("isAttacking", false);
                 anim.SetBool("isDead", false);
-                anim.SetBool("isHit", false);
                 StopMovement();
                 break;
             case EnemyStates.Dead:
                 anim.SetBool("isWalking", false);
                 anim.SetBool("isAttacking", false);
                 anim.SetBool("isDead", true);
-                anim.SetBool("isHit", false);
                 StopMovement();
                 EnemyDie();
                 break;
