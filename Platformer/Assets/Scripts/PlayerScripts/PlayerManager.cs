@@ -42,7 +42,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (currWeapon)
         {
-            playerAttack.CheckAttack(currWeapon.GetDamage(), currWeapon.GetWeaponRangeX(), currWeapon.GetWeaponRangeY());           
+            playerAttack.CheckAttack(currWeapon.GetDamage(), currWeapon.GetWeaponRangeX(), currWeapon.GetWeaponRangeY(), currWeapon.GetTimeBtwAttack());           
         }
     }
 
@@ -50,6 +50,7 @@ public class PlayerManager : MonoBehaviour
     {
         anim.runtimeAnimatorController = animatorOverrideController;
         animatorOverrideController["PlayerDummyAttack"] = currWeapon.GetAttackAnimClip();
+        animatorOverrideController["PlayerIdle"] = currWeapon.GetIdleAnimClip();
         Debug.Log("overrode");
     }
 

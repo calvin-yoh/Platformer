@@ -6,8 +6,10 @@ public class PanWeapon : Weapon
 {
     [SerializeField] private float damageToDeal = 0f;
     [SerializeField] private AnimationClip attackAnim = null;
+    [SerializeField] private AnimationClip idleAnim = null;
     [SerializeField] private float attackRangeX = 2.24f;
     [SerializeField] private float attackRangeY = 2.72f;
+    [SerializeField] private float timeBtwAttack = 0.8f;
 
     private string weaponName = "Pan";
     private float speed = 0.5f;
@@ -15,6 +17,11 @@ public class PanWeapon : Weapon
     public override AnimationClip GetAttackAnimClip()
     {
         return attackAnim;
+    }
+
+    public override AnimationClip GetIdleAnimClip()
+    {
+        return idleAnim;
     }
 
     public override float GetDamage()
@@ -40,5 +47,10 @@ public class PanWeapon : Weapon
     public override Weapon GetWeaponType()
     {
         return this;
+    }
+
+    public override float GetTimeBtwAttack()
+    {
+        return timeBtwAttack;
     }
 }

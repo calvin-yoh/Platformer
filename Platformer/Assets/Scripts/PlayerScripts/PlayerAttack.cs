@@ -15,7 +15,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform originOfExplode;
     public LayerMask whatIsEnemy;
 
-    public void CheckAttack(float damage, float attackRangeX, float attackRangeY)
+    public void CheckAttack(float damage, float attackRangeX, float attackRangeY, float weaponTimeBtwAttack)
     {
         if (timeBtwAttack <= 0)
         {
@@ -30,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
                     rb.AddForce(force, ForceMode2D.Impulse);
                 }
                 anim.SetBool("isAttacking", true);
-                timeBtwAttack = startTimeBtwAttack;
+                timeBtwAttack = weaponTimeBtwAttack;
                 Debug.Log("PlayerAttack");
             }
         }

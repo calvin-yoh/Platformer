@@ -6,8 +6,10 @@ public class StickWeapon : Weapon
 {
     [SerializeField] private float damageToDeal = 0f;
     [SerializeField] private AnimationClip attackAnim = null;
+    [SerializeField] private AnimationClip idleAnim = null;
     [SerializeField] private float attackRangeX = 3.38f;
     [SerializeField] private float attackRangeY = 1.87f;
+    [SerializeField] private float timeBtwAttack = 0.6f;
 
     private string weaponName = "Stick";
     private float speed = 0.5f;
@@ -20,6 +22,11 @@ public class StickWeapon : Weapon
     public override AnimationClip GetAttackAnimClip()
     {
         return attackAnim;
+    }
+
+    public override AnimationClip GetIdleAnimClip()
+    {
+        return idleAnim;
     }
 
     public override string GetWeaponName()
@@ -40,5 +47,10 @@ public class StickWeapon : Weapon
     public override float GetWeaponRangeY()
     {
         return attackRangeY;
+    }
+
+    public override float GetTimeBtwAttack()
+    {
+        return timeBtwAttack;
     }
 }

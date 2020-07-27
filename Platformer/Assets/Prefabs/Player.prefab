@@ -298,12 +298,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f188eeba19f698547a52ff07e1d69c46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeBtwAttack: 0.6
+  startTimeBtwAttack: 0.8
   forceMultiplier: 2000
   anim: {fileID: 947611635}
   attackPos: {fileID: 1851787123}
-  trialAttackRangeX: 3.75
-  trialAttackRangeY: 1.69
+  trialAttackRangeX: 2.24
+  trialAttackRangeY: 2.72
   originOfExplode: {fileID: 1851787123}
   whatIsEnemy:
     serializedVersion: 2

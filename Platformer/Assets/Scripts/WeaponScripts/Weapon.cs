@@ -15,11 +15,15 @@ public abstract class Weapon : MonoBehaviour
 
     public abstract AnimationClip GetAttackAnimClip();
 
+    public abstract AnimationClip GetIdleAnimClip();
+
     public abstract Weapon GetWeaponType();
 
     public abstract float GetWeaponRangeX();
 
     public abstract float GetWeaponRangeY();
+
+    public abstract float GetTimeBtwAttack();
 
     private void IgnoreCollision()
     {

@@ -100,6 +100,7 @@ MonoBehaviour:
   attackAnim: {fileID: 7400000, guid: 5baa1423a6e35dd4f928a1ec844b6664, type: 2}
   attackRangeX: 3.38
   attackRangeY: 1.87
+  timeBtwAttack: 0.6
 --- !u!50 &3415329080091589727
 Rigidbody2D:
   serializedVersion: 4
