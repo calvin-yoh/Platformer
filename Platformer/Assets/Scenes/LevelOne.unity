@@ -29987,7 +29987,7 @@ PrefabInstance:
     - target: {fileID: 1180272633285539298, guid: 539c10ba67e7c3a479d70d2eac60cc2a,
         type: 3}
       propertyPath: m_Name
-      value: All UI Elements
+      value: UIManager
       objectReference: {fileID: 0}
     - target: {fileID: 1180272633285539326, guid: 539c10ba67e7c3a479d70d2eac60cc2a,
         type: 3}
