@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float runSpeed = 40f;
 
+
     private float horizontalMove = 0f;
     private bool jump = false;
     private bool crouch = false;
@@ -55,4 +56,6 @@ public class PlayerMovement : MonoBehaviour
     {
         anim.SetBool("isCrouching", isCrouching);
     }
+
+   
 }

@@ -11,6 +11,7 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Transform m_GroundCheck = null;					// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck = null;					// A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider = null;         // A collider that will be disabled when crouching
+	[SerializeField] private ParticleSystem dust;
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
@@ -18,6 +19,8 @@ public class CharacterController2D : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+
+	public ParticleSystem.VelocityOverLifetimeModule velocityMod;
 
 	[Header("Events")]
 	[Space]
@@ -39,6 +42,11 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
+	}
+
+	private void Start()
+	{
+		velocityMod = dust.velocityOverLifetime;
 	}
 
 	private void Update()
@@ -129,6 +137,7 @@ public class CharacterController2D : MonoBehaviour
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			Debug.Log(jump);
+			CreateDust();
 		}
 	}
 
@@ -141,6 +150,13 @@ public class CharacterController2D : MonoBehaviour
 		// Multiply the player's x local scale by -1.
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
-		transform.localScale = theScale;
+		transform.localScale = theScale;	
+		velocityMod.xMultiplier *= -1;
+		CreateDust();
+	}
+
+	public void CreateDust()
+	{
+		dust.Play();
 	}
 }

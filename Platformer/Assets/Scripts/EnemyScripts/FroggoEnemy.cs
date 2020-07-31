@@ -94,7 +94,7 @@ public class FroggoEnemy : EnemyMovement
         transform.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
-    private void CheckState() //1 = walking, 2 = attacking, 3 = idle, 4 = dead
+    private void CheckState()
     {
         if (timeBtwAttack <= 0)
         {
