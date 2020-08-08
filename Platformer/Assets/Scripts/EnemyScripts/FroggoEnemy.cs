@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FroggoEnemy : EnemyMovement
+public class FroggoEnemy : Enemy
 {
     [SerializeField] private float health = 50f;
     [SerializeField] private float damageToDeal = 10f;

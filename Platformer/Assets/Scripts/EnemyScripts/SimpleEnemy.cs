@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleEnemy : EnemyMovement
+public class SimpleEnemy : Enemy
 {
     [SerializeField] private float health = 50f;
 

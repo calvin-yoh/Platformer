@@ -24,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
                 Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnemy);
                 foreach (Collider2D col in enemiesToDamage)
                 {
-                    col.GetComponent<EnemyMovement>().TakeDamage(damage);
+                    col.GetComponent<Enemy>().TakeDamage(damage);
                     Vector2 force =  (col.transform.position - originOfExplode.position) * forceMultiplier;
                     Rigidbody2D rb = col.transform.GetComponent<Rigidbody2D>();
                     rb.AddForce(force, ForceMode2D.Impulse);
@@ -46,5 +46,4 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(attackPos.position, new Vector3(trialAttackRangeX, trialAttackRangeY, 1));
     }
-
 }

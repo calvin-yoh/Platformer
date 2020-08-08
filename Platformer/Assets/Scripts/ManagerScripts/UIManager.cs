@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+
     }
 
     private void OnEnable()     // subscribe event

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyMovement : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     public abstract void EnemyDie();
 
