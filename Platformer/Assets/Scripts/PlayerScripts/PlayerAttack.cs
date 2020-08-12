@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private float timeBtwAttack;
-    [SerializeField] private float startTimeBtwAttack = 0f;
     [SerializeField] private float forceMultiplier = 0f;
     [SerializeField] private Animator anim = null;
 
@@ -25,9 +24,9 @@ public class PlayerAttack : MonoBehaviour
                 foreach (Collider2D col in enemiesToDamage)
                 {
                     col.GetComponent<Enemy>().TakeDamage(damage);
-                    Vector2 force =  (col.transform.position - originOfExplode.position) * forceMultiplier;
-                    Rigidbody2D rb = col.transform.GetComponent<Rigidbody2D>();
-                    rb.AddForce(force, ForceMode2D.Impulse);
+                    //Vector2 force =  (col.transform.position - originOfExplode.position) * forceMultiplier;
+                    //Rigidbody2D rb = col.transform.GetComponent<Rigidbody2D>();
+                    //rb.AddForce(force, ForceMode2D.Impulse);
                 }
                 anim.SetBool("isAttacking", true);
                 timeBtwAttack = weaponTimeBtwAttack;

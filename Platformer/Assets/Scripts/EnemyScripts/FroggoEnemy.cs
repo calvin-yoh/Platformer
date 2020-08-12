@@ -37,12 +37,6 @@ public class FroggoEnemy : Enemy
         moveSpeed *= moveDirection;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        CheckState();
-    }
-
     private void FixedUpdate()
     {
         anim.SetBool("isHit", false);
@@ -51,6 +45,7 @@ public class FroggoEnemy : Enemy
     public override void TakeDamage(float damageTaken)
     {
         anim.SetBool("isHit", true);
+        PlayDebuffEffect();
         health -= damageTaken;
         Debug.Log(health);
     }
@@ -84,17 +79,7 @@ public class FroggoEnemy : Enemy
         Destroy(gameObject, 0.66f);
     }
 
-    public void StopMovement()
-    {
-            transform.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-    }
-
-    public void ResumeMovement()
-    {
-        transform.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-    }
-
-    private void CheckState()
+    protected override void Think()
     {
         if (timeBtwAttack <= 0)
         {

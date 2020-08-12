@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleEnemy : Enemy
+public class HandManEnemy : Enemy
 {
     [SerializeField] private float health = 50f;
 
@@ -13,24 +13,20 @@ public class SimpleEnemy : Enemy
     [SerializeField] private Transform sightBot = null;
     [SerializeField] private Animator anim = null;
 
+    enum EnemyStates { Walking, Attacking, Idle, Dead };
+    EnemyStates enemyState;
+
     void Start()
     {
         transform.localScale = new Vector2(transform.localScale.x * moveDirection, transform.localScale.y);
         moveSpeed *= moveDirection;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        EnemyWalk();
-        CheckHealth(); 
-    }
-
     void CheckHealth()
     {
         if (health <= 0)
         {
-            EnemyDie();
+            enemyState = EnemyStates.Dead;
         }
     }
 
@@ -60,5 +56,28 @@ public class SimpleEnemy : Enemy
     protected override void EnemyAttack()
     {
         return;
+    }
+
+    protected override void Think()
+    {
+        enemyState = EnemyStates.Walking;
+        CheckHealth();
+
+        switch (enemyState)
+        {
+            case EnemyStates.Walking:
+                anim.SetBool("isWalking", true);
+                anim.SetBool("isDead", false);
+                EnemyWalk();
+                break;
+            case EnemyStates.Dead:
+                anim.SetBool("isWalking", false);
+                anim.SetBool("isDead", true);
+                StopMovement();
+                EnemyDie();
+                break;
+            default:
+                break;
+        }
     }
 }

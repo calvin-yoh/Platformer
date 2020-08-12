@@ -2,7 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Debuff : ScriptableObject
+[CreateAssetMenu(fileName = "New Debuff", menuName = "Debuff")]
+public class Debuff : ScriptableObject
 {
-    public abstract void Apply(Enemy enemyToDebuff);
+    [SerializeField] private float debuffTime;
+    public ParticleSystem myParticleSystem;
+    public Sprite mySprite = null;
+
+    public void Apply(Enemy enemyToDebuff)
+    {
+        return;
+    }
+
+    public float GetDebuffTime()
+    {
+        return debuffTime;
+    }
 }

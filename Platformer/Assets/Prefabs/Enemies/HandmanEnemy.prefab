@@ -43,14 +43,14 @@ GameObject:
   - component: {fileID: 2299750064571988769}
   - component: {fileID: 234839117}
   - component: {fileID: 408986480}
-  - component: {fileID: 1749193426}
+  - component: {fileID: -7800738260271940858}
   m_Layer: 13
   m_Name: HandmanEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2299750064571988771
 Transform:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1749193426
+--- !u!114 &-7800738260271940858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,15 +192,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2299750064571988772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381d6ce4627969445a1b930909b9dc2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7291f1ca2ba776a4b804e3420cdae72b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  moveSpeed: 2
+  moveSpeed: 1
   moveDirection: 1
   detectWhat:
     serializedVersion: 2
-    m_Bits: 9783
+    m_Bits: 9984
   sightTop: {fileID: 2299750063952405961}
   sightBot: {fileID: 2299750065348911159}
   anim: {fileID: 408986480}
