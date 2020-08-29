@@ -15,7 +15,7 @@ public class HandManEnemy : Enemy
 
     enum EnemyStates { Walking, Attacking, Idle, Dead };
     EnemyStates enemyState;
-
+    
     void Start()
     {
         transform.localScale = new Vector2(transform.localScale.x * moveDirection, transform.localScale.y);

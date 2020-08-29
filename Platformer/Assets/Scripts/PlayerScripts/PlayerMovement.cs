@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float runSpeed = 40f;
 
+    public float knockback;
+    public float knockbackLength;
+    public float knockbackCount;
+    public bool knockFromRight;
 
     private float horizontalMove = 0f;
     private bool jump = false;
@@ -42,7 +46,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        if (knockbackCount <= 0)
+        {
+            controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        }
+        else
+        {
+            if (knockFromRight)
+            {
+                controller.PlayerKnockback(-knockback, knockback);
+            }
+            if (!knockFromRight)
+            {
+                controller.PlayerKnockback(knockback, knockback);
+            }
+            knockbackCount -= Time.deltaTime;
+        }
         jump = false;
     }
 
@@ -56,6 +75,8 @@ public class PlayerMovement : MonoBehaviour
     {
         anim.SetBool("isCrouching", isCrouching);
     }
+
+
 
    
 }

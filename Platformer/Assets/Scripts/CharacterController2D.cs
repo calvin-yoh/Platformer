@@ -158,4 +158,9 @@ public class CharacterController2D : MonoBehaviour
 	{
 		dust.Play();
 	}
+
+	public void PlayerKnockback(float knockbackValueX, float knockbackValueY)
+	{
+		m_Rigidbody2D.velocity = new Vector2(knockbackValueX, knockbackValueY);
+	}
 }

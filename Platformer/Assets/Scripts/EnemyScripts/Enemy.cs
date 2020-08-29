@@ -23,6 +23,22 @@ public abstract class Enemy : MonoBehaviour
 
     protected abstract void EnemyAttack();
 
+    protected void ApplyKnockBack(Collision2D player)
+    {
+        Debug.Log("hitPlayer");
+        var playerMovement = player.gameObject.GetComponent<PlayerMovement>();
+        playerMovement.knockbackCount = playerMovement.knockbackLength;
+
+        if (player.transform.position.x < transform.position.x)
+        {
+            playerMovement.knockFromRight = true;
+        }
+        else
+        {
+            playerMovement.knockFromRight = false;
+        }
+    }
+
     public void StopMovement()
     {
         transform.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
@@ -38,11 +54,19 @@ public abstract class Enemy : MonoBehaviour
         DebuffEvents.RaiseCallStunnedDebuffEvent(this.gameObject);
     }
 
-
     protected abstract void Think();
 
     private void DoEffect()
     { 
         
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Debug.Log("collidedPlayer");
+        if (other.gameObject.tag == "Player")
+        {
+            ApplyKnockBack(other);
+        }
     }
 }
