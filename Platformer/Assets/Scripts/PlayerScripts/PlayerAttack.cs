@@ -14,23 +14,37 @@ public class PlayerAttack : MonoBehaviour
     public Transform originOfExplode;
     public LayerMask whatIsEnemy;
 
-    public void CheckAttack(float damage, float attackRangeX, float attackRangeY, float weaponTimeBtwAttack)
+    public void CheckAttack(Weapon currWeapon)
     {
         if (timeBtwAttack <= 0)
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, new Vector2(attackRangeX, attackRangeY), 0, whatIsEnemy);
+                Debug.Log("PlayerAttack");
+                Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPos.position, 
+                                                 new Vector2(currWeapon.GetWeaponRangeX(), currWeapon.GetWeaponRangeY())
+                                                    , 0, whatIsEnemy);
                 foreach (Collider2D col in enemiesToDamage)
                 {
-                    col.GetComponent<Enemy>().TakeDamage(damage);
+                    col.GetComponent<Enemy>().TakeDamage(currWeapon.GetDamage());
+                    switch (currWeapon.GetWeaponName())
+                    {
+                        case "Stick":
+                            Debug.Log("PlayerStickAttack");
+                            KnockbackEnemy(col.gameObject);
+                            break;
+                        case "Pan":
+                            StunEnemy(col.gameObject);
+                            break;
+                        default:
+                            break;
+                    }                    
                     //Vector2 force =  (col.transform.position - originOfExplode.position) * forceMultiplier;
                     //Rigidbody2D rb = col.transform.GetComponent<Rigidbody2D>();
                     //rb.AddForce(force, ForceMode2D.Impulse);
                 }
                 anim.SetBool("isAttacking", true);
-                timeBtwAttack = weaponTimeBtwAttack;
-                Debug.Log("PlayerAttack");
+                timeBtwAttack = currWeapon.GetTimeBtwAttack();              
             }
         }
         else
@@ -44,5 +58,15 @@ public class PlayerAttack : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(attackPos.position, new Vector3(trialAttackRangeX, trialAttackRangeY, 1));
+    }
+
+    private void StunEnemy(GameObject enemyHit)
+    {
+        DebuffEvents.RaiseStunnedDebuffEvent(enemyHit);
+    }
+
+    private void KnockbackEnemy(GameObject enemyHit)
+    {
+        DebuffEvents.RaiseKnockbackDebuffEvent(enemyHit, this.gameObject);
     }
 }

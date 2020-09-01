@@ -66,12 +66,12 @@ public class HandManEnemy : Enemy
         switch (enemyState)
         {
             case EnemyStates.Walking:
-                anim.SetBool("isWalking", true);
+                //anim.SetBool("isWalking", true);
                 anim.SetBool("isDead", false);
                 EnemyWalk();
                 break;
             case EnemyStates.Dead:
-                anim.SetBool("isWalking", false);
+                //anim.SetBool("isWalking", false);
                 anim.SetBool("isDead", true);
                 StopMovement();
                 EnemyDie();

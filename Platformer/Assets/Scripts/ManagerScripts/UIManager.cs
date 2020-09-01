@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-
+        winText.enabled = false;
     }
 
     private void OnEnable()     // subscribe event
@@ -25,14 +25,17 @@ public class UIManager : MonoBehaviour
     private void OnDisable()    // unsubscribe event
     {
         Events.OnUpdateScore -= UpdateScore;
+        Events.OnUpdateLives -= UpdateLives;
+        Events.OnShowWinScreen -= ShowWinText;
+        Events.OnUpdateHealthBar -= UpdateHealthBar;
     }
 
-    private void UpdateScore(int newScore)
+    private void UpdateScore(float newScore)
     {
-        scoreText.text = newScore.ToString();
+        scoreText.text = (float.Parse(scoreText.text) + newScore).ToString();
     }
 
-    private void UpdateLives(int newLives)
+    private void UpdateLives(float newLives)
     {
         livesText.text = newLives.ToString();
     }
@@ -42,7 +45,7 @@ public class UIManager : MonoBehaviour
         winText.enabled = true;
     }
 
-    private void UpdateHealthBar(int newHealth)
+    private void UpdateHealthBar(float newHealth)
     { 
         
     }

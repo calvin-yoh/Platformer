@@ -45,7 +45,6 @@ public class FroggoEnemy : Enemy
     public override void TakeDamage(float damageTaken)
     {
         anim.SetBool("isHit", true);
-        PlayDebuffEffect();
         health -= damageTaken;
         Debug.Log(health);
     }
@@ -63,14 +62,11 @@ public class FroggoEnemy : Enemy
 
     protected override void EnemyAttack()
     {
-        Debug.Log("attacking");
         Collider2D col = Physics2D.OverlapCircle(attackOrigin.position, attackRange, lookForPlayer);
         if (col != null)
         {
             col.GetComponent<PlayerManager>().TakeDamage(damageToDeal);
-            Vector2 force = (col.transform.position - originOfExplode.position) * forceMultiplier;
-            Rigidbody2D rb = col.transform.GetComponent<Rigidbody2D>();
-            rb.AddForce(force); 
+            KnockbackPlayer(col.gameObject);
         }
     }
 

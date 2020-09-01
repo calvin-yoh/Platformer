@@ -5,17 +5,17 @@ using UnityEngine;
 
 public static class Events
 {
-    public static event Action<int> OnUpdateScore;
-    public static event Action<int> OnUpdateLives;
-    public static event Action<int> OnUpdateHealthBar;
+    public static event Action<float> OnUpdateScore;
+    public static event Action<float> OnUpdateLives;
+    public static event Action<float> OnUpdateHealthBar;
     public static event Action OnShowWinScreen;
 
 
     public static event Action<AudioClip> OnPlaySound;
 
-    public static void RaiseUpdateScoreEvent(int newScore) => OnUpdateScore?.Invoke(newScore);
-    public static void RaiseUpdateLivesEvent(int newLives) => OnUpdateScore?.Invoke(newLives);
-    public static void RaiseUpdateHealthBarEvent(int newHealth) => OnUpdateHealthBar?.Invoke(newHealth);
+    public static void RaiseUpdateScoreEvent(float newScore) => OnUpdateScore?.Invoke(newScore);
+    public static void RaiseUpdateLivesEvent(float newLives) => OnUpdateScore?.Invoke(newLives);
+    public static void RaiseUpdateHealthBarEvent(float newHealth) => OnUpdateHealthBar?.Invoke(newHealth);
     public static void RaiseShowWinScreenEvent() => OnShowWinScreen?.Invoke();
 
 

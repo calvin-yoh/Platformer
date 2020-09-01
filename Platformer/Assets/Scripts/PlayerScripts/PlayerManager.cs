@@ -9,9 +9,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private Animator anim = null;
     [SerializeField] private AnimatorOverrideController animatorOverrideController = null;
 
-    [SerializeField] private Text winText = null;
-    [SerializeField] private Text scoreText = null;
-    [SerializeField] private Text livesText = null;
+    //[SerializeField] private Text winText = null;
+    //[SerializeField] private Text scoreText = null;
+    //[SerializeField] private Text livesText = null;
     [SerializeField] private Vector3 startingPos;
 
     [SerializeField] private float health = 100f;
@@ -26,7 +26,7 @@ public class PlayerManager : MonoBehaviour
     
     private void Awake()
     {
-        winText.enabled = false;      
+    
     }
 
     private void Start()
@@ -42,7 +42,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (currWeapon)
         {
-            playerAttack.CheckAttack(currWeapon.GetDamage(), currWeapon.GetWeaponRangeX(), currWeapon.GetWeaponRangeY(), currWeapon.GetTimeBtwAttack());           
+            playerAttack.CheckAttack(currWeapon);           
         }
     }
 
@@ -62,13 +62,14 @@ public class PlayerManager : MonoBehaviour
     public void AddLife()
     {
         currLives += 1;
+        UpdateLives(currLives);
     }
 
     public void PlayerDie()
     {
         this.transform.position = startingPos;
         currLives -= 1;
-        livesText.text = "Lives : " + currLives.ToString();
+        UpdateLives(currLives);
     }
 
     public void TakeDamage(float damage)
@@ -83,13 +84,9 @@ public class PlayerManager : MonoBehaviour
         anim.SetFloat("speed", 0);
     }
 
-    public void ShowWinScreen()
-    {
-        winText.enabled = true;
-    }
+    public void ShowWinScreen() => Events.RaiseShowWinScreenEvent();
 
-    public void UpdateScore(float points)
-    {
-        scoreText.text = (Convert.ToInt32(scoreText.text) + points).ToString();
-    }
+    public void UpdateScore(float points) => Events.RaiseUpdateScoreEvent(points);
+
+    public void UpdateLives(float currLives) => Events.RaiseUpdateScoreEvent(currLives);
 }

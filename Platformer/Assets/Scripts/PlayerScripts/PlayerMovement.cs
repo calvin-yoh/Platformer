@@ -75,8 +75,4 @@ public class PlayerMovement : MonoBehaviour
     {
         anim.SetBool("isCrouching", isCrouching);
     }
-
-
-
-   
 }

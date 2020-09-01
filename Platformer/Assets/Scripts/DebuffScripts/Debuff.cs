@@ -6,6 +6,7 @@ using UnityEngine;
 public class Debuff : ScriptableObject
 {
     [SerializeField] private float debuffTime;
+    [SerializeField] private float debuffDistance;
     public ParticleSystem myParticleSystem;
     public Sprite mySprite = null;
 
@@ -17,5 +18,10 @@ public class Debuff : ScriptableObject
     public float GetDebuffTime()
     {
         return debuffTime;
+    }
+
+    public float GetDebuffDistance()
+    {
+        return debuffDistance;
     }
 }
