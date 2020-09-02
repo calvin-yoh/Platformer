@@ -9,7 +9,7 @@ public abstract class Enemy : MonoBehaviour
 
 
     private bool isKnockedBack = false;
-    private float knockback;
+    private float knockback = 30f;
     private float knockbackLength;
     private bool knockFromRight;
 
@@ -65,6 +65,10 @@ public abstract class Enemy : MonoBehaviour
         transform.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
+    protected abstract void ActivateHitAnim();
+
+    protected abstract void DeactivateHitAnim();
+
     protected abstract void Think();
 
     private void DoEffect()
@@ -100,9 +104,11 @@ public abstract class Enemy : MonoBehaviour
         {
             StopMovement();
             stunTime -= Time.deltaTime;
+            ActivateHitAnim();
             if (stunTime <= 0)
             {
                 isStunned = false;
+                DeactivateHitAnim();
                 ResumeMovement();
                 isUnderDebuff--;
             }
@@ -113,6 +119,7 @@ public abstract class Enemy : MonoBehaviour
     {
         if (isKnockedBack)
         {
+            ActivateHitAnim();
             if (knockFromRight)
             {
                 myRigidBody.velocity = new Vector2(-knockback, 0f);
@@ -124,6 +131,7 @@ public abstract class Enemy : MonoBehaviour
             knockbackLength -= Time.deltaTime;
             if (knockbackLength <= 0)
             {
+                DeactivateHitAnim();
                 isKnockedBack = false;
                 isUnderDebuff--;
             }

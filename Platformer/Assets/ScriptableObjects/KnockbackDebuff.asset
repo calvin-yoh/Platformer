@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: KnockbackDebuff
   m_EditorClassIdentifier: 
   debuffTime: 0
-  debuffDistance: 5
+  debuffDistance: 0.2
   myParticleSystem: {fileID: 0}
   mySprite: {fileID: 0}

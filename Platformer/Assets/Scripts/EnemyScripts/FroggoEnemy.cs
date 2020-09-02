@@ -75,6 +75,16 @@ public class FroggoEnemy : Enemy
         Destroy(gameObject, 0.66f);
     }
 
+    protected override void ActivateHitAnim()
+    {
+        anim.SetBool("isHit", true);
+    }
+
+    protected override void DeactivateHitAnim()
+    {
+        anim.SetBool("isHit", false);
+    }
+
     protected override void Think()
     {
         if (timeBtwAttack <= 0)

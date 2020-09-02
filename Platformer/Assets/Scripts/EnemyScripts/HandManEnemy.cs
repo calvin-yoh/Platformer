@@ -32,7 +32,7 @@ public class HandManEnemy : Enemy
 
     public override void EnemyDie()
     {
-        anim.SetBool("dead", true);
+        anim.SetBool("isDead", true);
         Destroy(gameObject, 0.5f);
     }
 
@@ -56,6 +56,16 @@ public class HandManEnemy : Enemy
     protected override void EnemyAttack()
     {
         return;
+    }
+
+    protected override void ActivateHitAnim()
+    {
+        anim.SetBool("isHit", true);
+    }
+
+    protected override void DeactivateHitAnim()
+    {
+        anim.SetBool("isHit", false);
     }
 
     protected override void Think()
