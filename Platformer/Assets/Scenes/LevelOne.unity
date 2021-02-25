@@ -3876,9 +3876,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
-  m_WholeNumbers: 0
-  m_Value: 1
+  m_MaxValue: 100
+  m_WholeNumbers: 1
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -30289,6 +30289,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 405634317, guid: 539c10ba67e7c3a479d70d2eac60cc2a, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1525274699}
     - target: {fileID: 1180272633285539296, guid: 539c10ba67e7c3a479d70d2eac60cc2a,
         type: 3}
       propertyPath: m_ScreenMatchMode
