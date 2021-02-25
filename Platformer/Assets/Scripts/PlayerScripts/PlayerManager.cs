@@ -75,6 +75,7 @@ public class PlayerManager : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        Events.RaiseUpdateHealthBarEvent(health);
     }
 
     public void DisableMovementCompletely()

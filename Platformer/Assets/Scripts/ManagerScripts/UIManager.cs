@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Text winText = null;
     [SerializeField] private Text livesText = null;
     [SerializeField] private Text scoreText = null;
+    [SerializeField] private Slider healthBar = null;
 
     private void Awake()
     {
@@ -46,7 +47,7 @@ public class UIManager : MonoBehaviour
     }
 
     private void UpdateHealthBar(float newHealth)
-    { 
-        
+    {
+        healthBar.value = newHealth;
     }
 }

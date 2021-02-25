@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08914922783a59a44b9bd9c03229094e, type: 3}
   m_Name: StunnedDebuff
   m_EditorClassIdentifier: 
-  debuffTime: 1
+  debuffTime: 2
+  debuffDistance: 0
   myParticleSystem: {fileID: 8642748343883801474, guid: dc6ba9deb89a9114e8ac918d20e3a4fe,
     type: 3}
   mySprite: {fileID: 0}
